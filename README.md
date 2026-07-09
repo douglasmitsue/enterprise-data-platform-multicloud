@@ -23,6 +23,15 @@ this is a **scalable, enterprise-ready data platform architecture**.
 
 ---
 
+| Projetos | Status |
+|--------|--------|
+| Serverless Data Warehouse (AWS) | 🚧 Em andamento |
+| Multi-Cloud Data Pipelines | ⏳ Planejado |
+| Self-Service Analytics | ⏳ Planejado |
+| Augmented Analytics with LLMs | ⏳ Planejado |
+| Data API Platform | ⏳ Planejado |
+| Governance, Observability & Security | ⏳ Planejado |
+
 # 🏗 High-Level Platform Architecture
 
 ```mermaid
