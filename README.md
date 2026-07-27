@@ -1,351 +1,482 @@
-# 🚀 Modern Data Platform Architecture Lab  
-### Enterprise-Grade Multi-Cloud Data Platform | AI-Enabled | Production-Ready
+# Modern Data Platform Architecture
+
+> **End-to-end architecture and implementation of modern, scalable, governed, and cloud-native data platforms.**
+
+This repository is a hands-on **Data Platform Architecture portfolio** focused on the design and implementation of modern data ecosystems — from ingestion and processing to storage, analytics, governance, observability, security, and AI.
+
+The projects explore architectural patterns and engineering practices across **AWS, multicloud environments, Databricks, Modern Data Stack technologies, APIs, and Generative AI/LLMs**.
+
+The primary goal is not simply to implement individual technologies, but to understand the **architectural decisions, trade-offs, integration patterns, and governance principles** required to design production-oriented data platforms.
 
 ---
 
-## 📌 Executive Summary
+## Architecture Scope
 
-This repository presents the architecture, design decisions, and implementation blueprint of a **production-grade Modern Data Platform**.
+The repository explores the complete data platform lifecycle:
 
-It demonstrates end-to-end capabilities across:
+```text
+┌──────────────────────┐
+│     Data Sources     │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│      Ingestion       │
+│   Batch / Streaming  │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│     Processing       │
+│   ETL / ELT / Spark  │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│       Storage        │
+│ Lake / Warehouse /   │
+│      Lakehouse       │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│    Data Serving      │
+│ Analytics / APIs /   │
+│   Self-Service / AI  │
+└──────────────────────┘
 
-- Serverless Data Warehousing (AWS)
-- Multi-Cloud Data Pipelines
-- Self-Service Analytics
-- Augmented Analytics with LLMs
-- Data APIs
-- Governance, Observability & Security
-- Databricks Lakehouse Architecture
-- 7-Layer Modern Data Stack Implementation
-
-This is not a collection of isolated pipelines —  
-this is a **scalable, enterprise-ready data platform architecture**.
-
----
-
-| Projetos | Status |
-|--------|--------|
-| Serverless Data Warehouse (AWS) | 🚧 Em andamento |
-| Multi-Cloud Data Pipelines | ⏳ Planejado |
-| Self-Service Analytics | ⏳ Planejado |
-| Augmented Analytics with LLMs | ⏳ Planejado |
-| Data API Platform | ⏳ Planejado |
-| Governance, Observability & Security | ⏳ Planejado |
-
-# 🏗 High-Level Platform Architecture
-
-```mermaid
-flowchart LR
-    A[Operational Systems / SaaS / Streaming] --> B[Ingestion Layer]
-    B --> C[Raw Layer]
-    C --> D[Bronze Layer]
-    D --> E[Silver Layer]
-    E --> F[Gold Layer]
-    F --> G[Semantic Layer]
-    G --> H[Consumption Layer]
-
-    F --> I[Data APIs]
-    E --> J[AI / LLM Layer]
-    C --> K[Governance & Observability]
-    D --> K
-    E --> K
-    F --> K
+        Cross-Cutting Capabilities
+────────────────────────────────────────
+ Governance │ Quality │ Security
+ Observability │ Metadata │ Lineage
+────────────────────────────────────────
 ```
 
 ---
 
-# 🧠 Architectural Philosophy
+## Projects
 
-### 1️⃣ Platform Thinking
-Designed as a scalable data platform, not a pipeline collection.
+### 01 — Serverless Data Warehouse on AWS
 
-### 2️⃣ Cloud-Native & Elastic
-Serverless-first, decoupled storage/compute, auto-scaling by design.
+Design and implementation of a **serverless cloud data warehouse architecture on AWS**.
 
-### 3️⃣ Infrastructure as Code
-All infrastructure reproducible, versioned, environment-isolated.
+**Architecture topics**
 
-### 4️⃣ Governance Embedded
-Data quality, lineage, RBAC and monitoring are core components — not add-ons.
+* Serverless architecture
+* Data ingestion
+* Cloud storage
+* Data transformation
+* Analytical workloads
+* Scalability
+* Cost optimization
+* Security
 
-### 5️⃣ AI-First Integration
-LLMs and augmented analytics integrated into the platform lifecycle.
-
----
-
-# 📂 Project Modules
+📂 `projects/01-serverless-data-warehouse-aws`
 
 ---
 
-# 1️⃣ Serverless Data Warehouse (AWS)
+### 02 — Versioned Multicloud Data Pipelines
 
-## Objective
-Design a fully serverless, elastic, cost-efficient data warehouse architecture using Medallion principles.
+Design and implementation of **data pipelines spanning multiple cloud environments**, incorporating software engineering and version-control practices.
 
-## Architecture
+**Architecture topics**
 
-```mermaid
-flowchart LR
-    A[Databases / APIs / Files] --> B[Ingestion Service]
-    B --> C[Raw Storage]
-    C --> D[Bronze Transform]
-    D --> E[Silver Clean]
-    E --> F[Gold Aggregations]
-    F --> G[Serverless Query Engine]
-    G --> H[BI / Consumers]
+* Multicloud architecture
+* ETL / ELT
+* Pipeline orchestration
+* Data integration
+* Version control
+* Reproducibility
+* Infrastructure automation
+
+📂 `projects/02-multicloud-data-pipelines`
+
+---
+
+### 03 — Self-Service Analytics
+
+Architecture designed to enable users and teams to independently discover, access, and analyze trusted organizational data.
+
+**Architecture topics**
+
+* Self-service analytics
+* Semantic layers
+* Data accessibility
+* Analytics architecture
+* Data democratization
+* Governance
+* Cloud analytics
+
+📂 `projects/03-self-service-analytics`
+
+---
+
+### 04 — Augmented Analytics with AI & LLMs
+
+Exploration of **Artificial Intelligence and Large Language Models as part of the modern analytics ecosystem**.
+
+**Architecture topics**
+
+* Generative AI
+* Large Language Models
+* Augmented Analytics
+* AI-assisted analytics
+* Natural-language interfaces
+* Data + AI integration
+* Responsible AI considerations
+
+📂 `projects/04-augmented-analytics-ai-llm`
+
+---
+
+### 05 — Data API Architecture
+
+Design, implementation, and consumption of an API layer for exposing data products and analytical capabilities.
+
+**Architecture topics**
+
+* Data APIs
+* REST architecture
+* Data serving
+* API contracts
+* Authentication
+* Authorization
+* Decoupling
+* Data products
+
+📂 `projects/05-data-api`
+
+---
+
+### 06 — Data Governance, Observability, Quality & Security
+
+Definition and implementation of a cross-cutting framework for operating reliable and governed data platforms.
+
+**Architecture topics**
+
+* Data governance
+* Data quality
+* Data observability
+* Data security
+* Metadata management
+* Data lineage
+* Access control
+* Monitoring
+* Policies and standards
+
+📂 `projects/06-data-governance-observability-security`
+
+---
+
+### 07 — Cloud Data Platform with Databricks
+
+Design and deployment of a cloud data platform using **Databricks and Lakehouse architectural principles**.
+
+**Architecture topics**
+
+* Databricks
+* Apache Spark
+* Lakehouse Architecture
+* Data engineering
+* Distributed processing
+* Analytical workloads
+* Platform architecture
+* Cloud scalability
+
+📂 `projects/07-databricks-data-platform`
+
+---
+
+### 08 — Modern Data Stack: 7-Layer Architecture
+
+The final project consolidates the concepts explored throughout the repository into an **end-to-end Modern Data Stack architecture composed of seven logical layers**.
+
+```text
+┌─────────────────────────────────────┐
+│        7. Consumption & AI          │
+├─────────────────────────────────────┤
+│        6. Semantic & Serving        │
+├─────────────────────────────────────┤
+│        5. Transformation            │
+├─────────────────────────────────────┤
+│        4. Processing                │
+├─────────────────────────────────────┤
+│        3. Storage                   │
+├─────────────────────────────────────┤
+│        2. Ingestion                 │
+├─────────────────────────────────────┤
+│        1. Data Sources              │
+└─────────────────────────────────────┘
+
+     Governance • Security • Quality
+        Metadata • Observability
 ```
 
-## Engineering Considerations
+The objective is to demonstrate how independent data technologies can be integrated into a **cohesive, scalable, observable, secure, and governed platform**.
 
-- Partitioning strategies
-- Late-arriving data handling
-- Schema evolution
-- Cost-aware storage tiering
-- Workload isolation
-- Query performance optimization
-
-## Non-Functional Requirements
-
-✔ Horizontal scalability  
-✔ Cost elasticity  
-✔ High availability  
-✔ Secure access control  
+📂 `projects/08-modern-data-stack`
 
 ---
 
-# 2️⃣ Multi-Cloud Data Pipelines
+## Engineering Principles
 
-## Objective
-Build cloud-agnostic, version-controlled pipelines with CI/CD and environment isolation.
+The projects in this repository follow a set of architectural and engineering principles:
 
-## CI/CD Architecture
+* **Architecture before technology**
+* **Loose coupling and high cohesion**
+* **Automation over manual operations**
+* **Infrastructure as Code whenever applicable**
+* **Security by design**
+* **Governance by design**
+* **Observability by default**
+* **Data quality as a platform capability**
+* **Scalability and resilience**
+* **Cost awareness**
+* **Reproducibility**
+* **Clear architectural documentation**
 
-```mermaid
-flowchart LR
-    A[Git Repository] --> B[CI Pipeline]
-    B --> C[Unit & Data Tests]
-    C --> D[Build Artifacts]
-    D --> E[Deploy to Dev]
-    E --> F[Promote to Prod]
+---
+
+## Architecture Decision Records
+
+Relevant architectural decisions should be documented using **Architecture Decision Records (ADRs)**.
+
+```text
+docs/
+└── adr/
+    ├── 0001-data-storage-strategy.md
+    ├── 0002-batch-vs-streaming.md
+    ├── 0003-data-processing-engine.md
+    └── 0004-governance-strategy.md
 ```
 
-## Capabilities
+Each ADR documents:
 
-- Metadata-driven orchestration
-- Parameterized infrastructure
-- Automated testing
-- Rollback & promotion strategies
-- Environment segregation (Dev / Test / Prod)
+* Context
+* Problem
+* Considered alternatives
+* Decision
+* Rationale
+* Consequences
+* Trade-offs
+
+This makes architectural reasoning explicit instead of documenting only the final implementation.
 
 ---
 
-# 3️⃣ Self-Service Analytics
+## Architecture Documentation
 
-## Objective
-Enable governed, scalable, business-driven analytics.
+Architecture diagrams should follow the **C4 Model** whenever applicable.
 
-## Architecture
-
-```mermaid
-flowchart LR
-    A[Gold Layer] --> B[Semantic Layer]
-    B --> C[Metrics Standardization]
-    C --> D[BI Tools]
-    B --> E[Row-Level Security]
+```text
+docs/
+├── architecture/
+│   ├── context/
+│   ├── containers/
+│   ├── components/
+│   └── deployment/
+│
+├── adr/
+│
+└── diagrams/
 ```
 
-## Enterprise Patterns
-
-- Star schema modeling
-- Semantic layer abstraction
-- Centralized metrics definitions
-- Performance optimization strategies
-- Cost governance enforcement
+Documentation should capture both the **current architecture** and the reasoning behind important design decisions.
 
 ---
 
-# 4️⃣ Augmented Analytics with LLMs
+## Repository Structure
 
-## Objective
-Integrate AI into the analytics workflow.
-
-## AI Architecture
-
-```mermaid
-flowchart LR
-    A[User Question] --> B[LLM Prompt Layer]
-    B --> C[Metadata Retrieval]
-    C --> D[SQL Generation]
-    D --> E[Query Execution]
-    E --> F[Insight Generation]
-    F --> G[User Response]
+```text
+modern-data-platform-architecture/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+├── docs/
+│   ├── architecture/
+│   ├── adr/
+│   └── diagrams/
+│
+├── projects/
+│   ├── 01-serverless-data-warehouse-aws/
+│   ├── 02-multicloud-data-pipelines/
+│   ├── 03-self-service-analytics/
+│   ├── 04-augmented-analytics-ai-llm/
+│   ├── 05-data-api/
+│   ├── 06-data-governance-observability-security/
+│   ├── 07-databricks-data-platform/
+│   └── 08-modern-data-stack/
+│
+├── infrastructure/
+│   ├── terraform/
+│   └── scripts/
+│
+├── src/
+│
+├── tests/
+│
+└── assets/
+    └── diagrams/
 ```
 
-## Advanced Capabilities
-
-- Natural Language to SQL
-- Retrieval-Augmented Generation (RAG)
-- Semantic metadata embeddings
-- Conversational analytics
-- Controlled prompt engineering
-- AI-assisted data discovery
+Each project can evolve independently while following common architecture, documentation, security, and engineering standards.
 
 ---
 
-# 5️⃣ Data API Platform
+## Technology Landscape
 
-## Objective
-Expose curated datasets securely through versioned APIs.
+Technologies will vary according to the architectural requirements of each project.
 
-```mermaid
-flowchart LR
-    A[Gold Layer] --> B[API Service]
-    B --> C[Authentication / RBAC]
-    C --> D[Rate Limiting]
-    D --> E[External Systems]
+| Domain         | Technologies / Concepts                       |
+| -------------- | --------------------------------------------- |
+| Cloud          | AWS / Multicloud                              |
+| Data Platform  | Databricks                                    |
+| Processing     | Apache Spark / Batch / Streaming              |
+| Storage        | Data Lake / Data Warehouse / Lakehouse        |
+| Integration    | ETL / ELT / APIs                              |
+| Infrastructure | Infrastructure as Code                        |
+| Analytics      | Self-Service Analytics                        |
+| AI             | Generative AI / LLMs                          |
+| Governance     | Metadata / Lineage / Policies                 |
+| Reliability    | Data Quality / Observability                  |
+| Security       | IAM / Access Control / Security by Design     |
+| Architecture   | C4 Model / ADRs / Well-Architected principles |
+| Engineering    | Git / Version Control / Testing / Automation  |
+
+> Specific technologies and architectural decisions are documented within each project.
+
+---
+
+## Architectural Evaluation
+
+Solutions should be evaluated across multiple dimensions rather than solely on technical functionality.
+
+| Dimension        | Key Question                                                      |
+| ---------------- | ----------------------------------------------------------------- |
+| Scalability      | Can the architecture handle increasing data volume and workload?  |
+| Reliability      | How does the platform behave when components fail?                |
+| Security         | How are identities, permissions, secrets, and data protected?     |
+| Governance       | Can data ownership, lineage, policies, and compliance be managed? |
+| Observability    | Can failures and data-quality problems be detected quickly?       |
+| Performance      | Does the architecture meet workload latency requirements?         |
+| Cost             | Is the solution economically sustainable at scale?                |
+| Maintainability  | Can teams evolve the platform safely?                             |
+| Interoperability | Can components evolve without excessive coupling?                 |
+
+---
+
+## Project Documentation Standard
+
+Each project should contain its own `README.md` following a consistent structure:
+
+```text
+1. Problem Statement
+2. Business Requirements
+3. Functional Requirements
+4. Non-Functional Requirements
+5. Architecture
+6. Architecture Diagram
+7. Technology Decisions
+8. Architecture Decision Records
+9. Data Flow
+10. Security
+11. Governance
+12. Observability
+13. Deployment
+14. Testing Strategy
+15. Cost Considerations
+16. Trade-offs
+17. Limitations
+18. Future Improvements
+19. Lessons Learned
 ```
 
-## Features
-
-- RESTful architecture
-- API versioning
-- Contract-first development
-- Authentication & authorization
-- Monitoring & throttling
-- Observability integration
+This structure intentionally emphasizes **architectural reasoning**, not only implementation.
 
 ---
 
-# 6️⃣ Governance, Observability & Security
+## Learning Objectives
 
-## Governance Framework
+By completing the projects in this repository, the goal is to strengthen the ability to:
 
-- Data Quality validation framework
-- Freshness monitoring
-- Volume anomaly detection
-- Schema drift detection
-- Lineage tracking
-- Role-based access control
-- Policy enforcement
+* Design end-to-end data platforms
+* Translate business requirements into technical architecture
+* Evaluate architectural trade-offs
+* Select technologies based on requirements rather than trends
+* Design scalable data ingestion and processing systems
+* Architect Data Lake, Data Warehouse, and Lakehouse solutions
+* Build governed and observable data ecosystems
+* Design secure data-access patterns
+* Expose data through APIs and analytical interfaces
+* Integrate AI and LLM capabilities into data platforms
+* Document architecture using professional practices
+* Communicate architectural decisions clearly
 
-## Observability Architecture
+---
 
-```mermaid
-flowchart LR
-    A[Data Layers] --> B[Quality Checks]
-    A --> C[Freshness Monitoring]
-    A --> D[Lineage Tracking]
-    A --> E[Access Control Policies]
+## Architecture Mindset
+
+> A data platform is more than a collection of tools.
+
+The central principle behind this repository is that architecture is about **designing a coherent system under real-world constraints**.
+
+Technology selection is therefore treated as a consequence of:
+
+```text
+Business Requirements
+        ↓
+Quality Attributes
+        ↓
+Constraints
+        ↓
+Architecture Decisions
+        ↓
+Technology Selection
+        ↓
+Implementation
+        ↓
+Measurement & Evolution
 ```
 
-## Design Principles
+Every project should answer not only:
 
-✔ Security by design  
-✔ Compliance-ready architecture  
-✔ Data trust as a platform capability  
+**“How was this implemented?”**
 
----
+but also:
 
-# 7️⃣ Databricks Lakehouse Implementation
-
-## Objective
-Build unified batch + streaming analytics using a Lakehouse architecture.
-
-```mermaid
-flowchart LR
-    A[Streaming Sources] --> B[Bronze Delta]
-    B --> C[Silver Delta]
-    C --> D[Gold Delta]
-    D --> E[ML / BI / APIs]
-```
-
-## Highlights
-
-- ACID guarantees with Delta Lake
-- Structured Streaming pipelines
-- Z-Ordering & partition tuning
-- Cost-performance optimization
-- Scalable distributed compute
+**“Why was it designed this way, what alternatives were considered, and what trade-offs were accepted?”**
 
 ---
 
-# 8️⃣ 7-Layer Modern Data Stack
+## Project Status
 
-| Layer | Responsibility |
-|-------|---------------|
-| 1 | Data Sources |
-| 2 | Ingestion |
-| 3 | Raw Storage |
-| 4 | Transformation |
-| 5 | Semantic Modeling |
-| 6 | Consumption |
-| 7 | Governance & Monitoring |
+This repository is continuously evolving as the projects are designed, implemented, documented, and refined.
 
----
+|  # | Project                                       | Status |
+| -: | --------------------------------------------- | :----: |
+| 01 | Serverless Data Warehouse on AWS              |    ⏳   |
+| 02 | Multicloud Data Pipelines                     |    ⏳   |
+| 03 | Self-Service Analytics                        |    ⏳   |
+| 04 | Augmented Analytics with AI & LLMs            |    ⏳   |
+| 05 | Data API                                      |    ⏳   |
+| 06 | Governance, Observability, Quality & Security |    ⏳   |
+| 07 | Databricks Data Platform                      |    ⏳   |
+| 08 | Modern Data Stack                             |    ⏳   |
 
-# 🔬 Non-Functional Engineering Focus
-
-This platform was designed considering:
-
-- Distributed systems scalability
-- Fault tolerance & recovery
-- Cost-performance trade-offs
-- Infrastructure reproducibility
-- High availability
-- Security isolation
-- Observability standards
-- Maintainability at scale
+**Legend:** ⏳ Planned · 🚧 In Progress · ✅ Completed
 
 ---
 
-# 🛠 Technologies & Concepts Demonstrated
+## Disclaimer
 
-- Cloud-native architecture
-- Serverless compute
-- Lakehouse architecture
-- CI/CD for Data Engineering
-- Infrastructure as Code
-- Metadata-driven pipelines
-- Data contracts
-- API-first architecture
-- LLM integration in data systems
-- Enterprise governance patterns
+This repository contains architectures, implementations, and documentation developed for educational and professional development purposes.
+
+Cloud resources and configurations should be reviewed and adapted before being used in production environments.
 
 ---
 
-# 🎯 Target Roles
+## License
 
-This repository demonstrates readiness for:
-
-- Senior Data Engineer  
-- Staff Data Engineer  
-- Principal Data Engineer  
-- Data Platform Architect  
-- Cloud Data Architect  
-- AI Data Architect  
-
----
-
-# 🧩 What Makes This Big Tech Ready
-
-- Clear separation of concerns
-- System design maturity
-- Scalability trade-off awareness
-- Governance-first architecture
-- AI-native data integration
-- Production-grade thinking
-- Multi-cloud abstraction strategy
-
----
-
-# 📬 Contact
-
-Open to discussions about system design, trade-offs, scalability patterns, platform engineering, and AI-enabled data architectures.
-
----
-
-# ⭐ If This Repository Adds Value
-
-Consider starring it and connecting for architectural deep dives.
-
----
+This project is licensed under the terms defined in the repository's `LICENSE` file.
