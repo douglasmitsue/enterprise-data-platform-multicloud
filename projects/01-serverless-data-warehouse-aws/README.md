@@ -28,7 +28,6 @@ Throughout this project, the following concepts will be covered:
 - Architecture Best Practices
 
 ---
-git
 ## Architecture
 
 ![Serverless Data Warehouse Architecture](images/architecture_serveless_aws.png)
