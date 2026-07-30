@@ -31,7 +31,7 @@ Throughout this project, the following concepts will be covered:
 git
 ## Architecture
 
-![architecture]()
+![architecture](projects/01-serverless-data-warehouse-aws/images/architecture_serveless_aws.png)
 
 ---
 
