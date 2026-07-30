@@ -31,7 +31,7 @@ Throughout this project, the following concepts will be covered:
 git
 ## Architecture
 
-![[08-Data-Architecture/enterprise-data-platform-multicloud/projects/01-serverless-data-warehouse-aws/images/architecture_serveless_aws.png]]
+![[projects/01-serverless-data-warehouse-aws/images/architecture_serveless_aws.png]]
 
 ---
 
